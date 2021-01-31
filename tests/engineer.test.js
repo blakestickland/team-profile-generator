@@ -2,12 +2,12 @@ const { expect } = require("@jest/globals");
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer Unit Test", () => {
-  describe("getName method", () => {
+  describe("getGithub method", () => {
     it("should return the argument that we passed to the constructor", () => {
-      const name = 'abc';
-      const dummy = new Engineer(name, '123', '123@123.ca');
+      const githubUsername = 'jimBob';
+      const dummy = new Engineer('Tom', '123', '123@123.ca', githubUsername);
 
-      expect(dummy.getName()).toStrictEqual(name);
+      expect(dummy.getGithub()).toStrictEqual(githubUsername);
       
     });
   });
