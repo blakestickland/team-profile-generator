@@ -11,5 +11,13 @@ describe("Intern Unit Test", () => {
       
     });
   });
+  describe("getRole method test", () => {
+    it("should return the return value passed to the constructor", () => {
+        const dummy = new Intern('bob', '123', '123@123.ca', 'Scotch');
 
+
+        expect(dummy.getRole()).toStrictEqual('Intern');
+
+    });
+  });
 });

@@ -36,8 +36,13 @@ describe("Employee Unit Test", () => {
       
     });
   });
+  describe("getRole method test", () => {
+    it("should return the return value passed to the constructor", () => {
+        const dummy = new Employee('bob', '123', '123@123.ca');
 
+
+        expect(dummy.getRole()).toStrictEqual('Employee');
+
+    });
+  });
 });
-
-// getRole() {
-// }

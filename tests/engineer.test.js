@@ -11,5 +11,13 @@ describe("Engineer Unit Test", () => {
       
     });
   });
+  describe("getRole method test", () => {
+    it("should return the return value passed to the constructor", () => {
+        const dummy = new Engineer('bob', '123', '123@123.ca', 'gitHubEngineer');
 
+
+        expect(dummy.getRole()).toStrictEqual('Engineer');
+
+    });
+  });
 });
