@@ -1,15 +1,22 @@
-const { expect } = require("@jest/globals");
+const { expect, it } = require("@jest/globals");
 const Employee = require("../lib/Employee");
 
 describe("Employee Unit Test", () => {
   describe("getName method", () => {
     it("should return the argument that we passed to the constructor", () => {
       const name = 'abc';
-      const dummy = new Employee(name, '123', '123@123.ca');
+      const dummy = new Employee(name, 19, '123@123.ca');
 
       expect(dummy.getName()).toStrictEqual(name);
       
     });
+    // it.only("should throw an error if provided an empty string", () => {
+    //   const name = ' ';
+    //   const dummy = new Employee(name, 19, '123@123.ca');
+    //   const err = new Error("Expected input 'name' to be a non-empty string");
+
+    //   expect(dummy.getName()).toThrowError(err);
+    // });
   });
   describe("getId method", () => {
     it("should return the argument that we passed to the constructor", () => {
@@ -23,7 +30,7 @@ describe("Employee Unit Test", () => {
   describe("getEmail method", () => {
     it("should return the argument that we passed to the constructor", () => {
       const email = '123@123.com';
-      const dummy = new Employee(name, '123', email);
+      const dummy = new Employee('abc', 19, email);
 
       expect(dummy.getEmail()).toStrictEqual(email);
       
