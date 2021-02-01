@@ -24,8 +24,3 @@ describe("Manager Unit Test", () => {
   });
 
 });
-
-
-// getRole() {
-//     return 'Manager';
-// }
