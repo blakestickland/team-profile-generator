@@ -10,13 +10,6 @@ describe("Employee Unit Test", () => {
       expect(dummy.getName()).toStrictEqual(name);
       
     });
-    // it.only("should throw an error if provided an empty string", () => {
-    //   const name = ' ';
-    //   const dummy = new Employee(name, 19, '123@123.ca');
-    //   const err = new Error("Expected input 'name' to be a non-empty string");
-
-    //   expect(dummy.getName()).toThrowError(err);
-    // });
   });
   describe("getId method", () => {
     it("should return the argument that we passed to the constructor", () => {
