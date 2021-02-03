@@ -1,23 +1,18 @@
 // Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
 const { generateTemplate } = require('./src/generateTemplate');
-const { generateCard } = require('./src/generateCard');
 const { generateManagerCard } = require('./src/generateManagerCard');
 const { generateEngineerCard } = require('./src/generateEngineerCard');
 const { generateInternCard } = require('./src/generateInternCard');
 
 // Import Classes from lib folder
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const { number } = require('yargs');
 const { run } = require('jest');
 
-
-const writeFileAsync = util.promisify(fs.writeFile); // TODO not needed??
 
 // Use Inquirer to ask questions in a recursive loop and store results to an Array called 'team'.
 
@@ -52,7 +47,7 @@ class Questions {
             {
                 type: "list",
                 name: "type",
-                message: "Would you lke to add a team member or finish building your team?",
+                message: "What role would you like to add to your team?",
                 choices: [
                     "Manager",
                     "Engineer",
@@ -170,64 +165,31 @@ class Questions {
             switch (role) {
 
                 case "Manager":
-                    console.log("You have made a manager card");
-                    console.log(`Generated employee object inside switch statement is: ${JSON.stringify(element)}`);
-                    console.log(`Name of eployee is ${element.name}`)
-                    // generateManagerCard went here
                          const managerCard = generateManagerCard(element);
                          cards += managerCard;
                     break;
 
                 case "Engineer":
-                    console.log("You have made a engineer card");
-                    console.log(`Generated employee object inside switch statement is: ${JSON.stringify(element)}`);
-                    console.log(`Name of eployee is ${element.name}`)
-                    // generateManagerCard went here
                          const engineerCard = generateEngineerCard(element);
                          cards += engineerCard;
                     break;
 
                 case "Intern":
-                    console.log("You have made a intern card");
-                    console.log(`Generated employee object inside switch statement is: ${JSON.stringify(element)}`);
-                    console.log(`Name of eployee is ${element.name}`)
-                    // generateManagerCard went here
                          const internCard = generateInternCard(element);
                          cards += internCard;
                          break;
                          
-                        }
-                        
-                    });
-                    console.log (`${cards}`);
-        // add cards html to overall html temlplate
-        // let generatedHtml = generateTemplate(cards);
-        // fs.writeFile(`./generated_html_files/team.html`, generatedHtml, () => {
-        // })
-    }
-}
+            }
+                    
+        });
+       
+        // add cards html to overall html template
+        const generatedHtml = generateTemplate(cards);
+        fs.writeFile(`./generated_html_files/team.html`, generatedHtml, () => {
+        }); 
+    };
+};
 
 const questions = new Questions();
 
 questions.start();
-
-// TODO: Create a function to initialize app??
-// const init = async () => {
-//     try {
-        
-//         const answers = await questions.start();
-  
-//         const generateTemplate = generateTemplate(answers);
-  
-//         await writeFileAsync(`./dist/${answers.name.split(' ').join('_')}_README.md`, generateTemplate.trim());
-  
-//         console.log('successfully wrote file')
-  
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-  
-//   // Function call to initialize app
-//   init();
-  

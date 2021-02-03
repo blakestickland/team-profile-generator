@@ -1,5 +1,5 @@
-const generateTemplate = (cards) => {
-    return `
+const generateTemplate = (cards) => 
+     `
     <html lang="en">
 
     <head>
@@ -30,7 +30,7 @@ const generateTemplate = (cards) => {
     </body>
     
     </html>  `
-}
+
 
 module.exports = {
     generateTemplate

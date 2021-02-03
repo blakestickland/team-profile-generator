@@ -8,7 +8,7 @@ const generateEngineerCard = (element) =>
                     <h4 class="card-subtitle mb-2 text-muted">${element.role}</h4>
                     <hr>
                     <p class="card-text ID">ID: ${element.id}</p>
-                    <p class="card-text email">Email: ${element.email}</p>
+                    <p class="card-text email">Email: <a href="mailto:${element.email}">${element.email}</a></p>
                     <!-- Enter a dynamic entry in next line based on job position -->
                     <p class="card-text">Github Username: <a href="https://${element.githubUsername}.github.io/" class="card-link" target="_blank">${element.githubUsername}</a></p>
                 </div>
