@@ -5,7 +5,7 @@ describe("Intern Unit Test", () => {
   describe("getSchool method", () => {
     it("should return the argument that we passed to the constructor", () => {
       const school = 'Tintern';
-      const dummy = new Intern('abc', '123', '123@123.ca', school);
+      const dummy = new Intern('abc', '123', '123@123.ca', 'Intern', school);
 
       expect(dummy.getSchool()).toStrictEqual(school);
       

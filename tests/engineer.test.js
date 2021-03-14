@@ -5,7 +5,7 @@ describe("Engineer Unit Test", () => {
   describe("getGithub method", () => {
     it("should return the argument that we passed to the constructor", () => {
       const githubUsername = 'jimBob';
-      const dummy = new Engineer('Tom', '123', '123@123.ca', githubUsername);
+      const dummy = new Engineer('Tom', '123', '123@123.ca', 'Engineer', githubUsername);
 
       expect(dummy.getGithub()).toStrictEqual(githubUsername);
       

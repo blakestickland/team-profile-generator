@@ -6,7 +6,7 @@ describe("Manager Unit Test", () => {
   describe("getOfficeNumber method", () => {
     it("should return the argument that we passed to the constructor", () => {
       const officeNumber = 'abc';
-      const dummy = new Manager('bob', '123', '123@123.ca', officeNumber);
+      const dummy = new Manager('bob', 19, '123@123.ca', 'Manager', officeNumber);
 
       expect(dummy.getOfficeNumber()).toStrictEqual(officeNumber);
       
